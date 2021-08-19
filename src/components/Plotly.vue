@@ -56,9 +56,12 @@ export default {
       },
       deep: true
     },
-    layout(layout) {
-      this.innerLayout = { ...layout };
-      this.schedule({ replot: false });
+    layout: {
+      handler(value) {
+        this.innerLayout = { ...value };
+        this.schedule({ replot: false });
+      },
+      deep: true
     }
   },
   computed: {
